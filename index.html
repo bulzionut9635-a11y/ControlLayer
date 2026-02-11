@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ControlLayer.io</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #0b0f1a;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 20px 40px;
+    background-color: rgba(11,15,26,0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+nav h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00aaff;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    background: radial-gradient(circle at center, #111c33, #0b0f1a);
+}
+
+header h1 {
+    font-size: 56px;
+    font-family: 'Orbitron', sans-serif;
+    color: #00aaff;
+    margin-bottom: 20px;
+}
+
+header p {
+    max-width: 600px;
+    font-size: 20px;
+    color: #cfd8ff;
+}
+
+.button {
+    margin-top: 30px;
+    padding: 15px 40px;
+    background-color: #00aaff;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #0088cc;
+}
+
+.section {
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #00aaff;
+}
+
+.section p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #cfd8ff;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.card {
+    background-color: #121a2b;
+    padding: 40px;
+    border-radius: 10px;
+    transition: 0.3s;
+    border: 1px solid #1f2c4d;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #00aaff;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid #1f2c4d;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>ControlLayer</h2>
+    <div>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<header>
+    <h1>Infrastructure. Automated. Controlled.</h1>
+    <p>We build secure automation systems and intelligent infrastructure for modern businesses.</p>
+    <a href="#contact" class="button">Book Consultation</a>
+</header>
+
+<section class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="card">
+            <h3>Automation Systems</h3>
+            <p>Workflow automation and intelligent alerts.</p>
+        </div>
+        <div class="card">
+            <h3>Uptime Monitoring</h3>
+            <p>24/7 monitoring with real-time alerts.</p>
+        </div>
+        <div class="card">
+            <h3>Secure Infrastructure</h3>
+            <p>Server configuration and backup systems.</p>
+        </div>
+        <div class="card">
+            <h3>Custom Tech Builds</h3>
+            <p>Internal tools and API integrations.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="process">
+    <h2>Structured. Secure. Scalable.</h2>
+    <p>Audit → Architecture → Implementation → Automation → Monitoring.</p>
+</section>
+
+<section class="section" id="contact">
+    <h2>Ready to Take Control?</h2>
+
+    <form action="https://formsubmit.co/bulzionut9635@gmail.com" method="POST" style="max-width:500px;margin:40px auto;text-align:left;">
+
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Lead - ControlLayer">
+        <input type="hidden" name="_template" value="table">
+
+        <label>Name</label>
+        <input type="text" name="name" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:5px;border:none;">
+
+        <label>Email</label>
+        <input type="email" name="email" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:5px;border:none;">
+
+        <label>Message</label>
+        <textarea name="message" rows="4" required style="width:100%;padding:10px;margin-bottom:20px;border-radius:5px;border:none;"></textarea>
+
+        <button type="submit" class="button" style="width:100%;">Start Now</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 ControlLayer.io — Built for Stability.
+</footer>
+
+</body>
+</html>
+
