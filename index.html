@@ -171,24 +171,49 @@ footer {
 <section class="section" id="contact">
     <h2>Ready to Take Control?</h2>
 
-    <form action="https://formsubmit.co/bulzionut9635@gmail.com" method="POST" style="max-width:500px;margin:40px auto;text-align:left;">
+  <form id="leadForm" action="/api/lead" method="POST" style="max-width:500px;margin:40px auto;text-align:left;">
+  <!-- Honeypot anti-bot (lasă-l așa) -->
+  <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="New Lead - ControlLayer">
-        <input type="hidden" name="_template" value="table">
-<input type="hidden" name="_next" value="https://control-layer-three.vercel.app/thankyou.html">
+  <label>Name</label>
+  <input type="text" name="name" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:5px;border:none;">
 
-        <label>Name</label>
-        <input type="text" name="name" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:5px;border:none;">
+  <label>Email</label>
+  <input type="email" name="email" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:5px;border:none;">
 
-        <label>Email</label>
-        <input type="email" name="email" required style="width:100%;padding:10px;margin-bottom:15px;border-radius:5px;border:none;">
+  <label>Message</label>
+  <textarea name="message" rows="4" required style="width:100%;padding:10px;margin-bottom:20px;border-radius:5px;border:none;"></textarea>
 
-        <label>Message</label>
-        <textarea name="message" rows="4" required style="width:100%;padding:10px;margin-bottom:20px;border-radius:5px;border:none;"></textarea>
+  <button type="submit" class="button" style="width:100%;">Start Now</button>
 
-        <button type="submit" class="button" style="width:100%;">Start Now</button>
-    </form>
+  <p id="formStatus" style="margin-top:12px;color:#cfd8ff;"></p>
+</form>
+
+<script>
+  const form = document.getElementById("leadForm");
+  const statusEl = document.getElementById("formStatus");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    statusEl.textContent = "Sending…";
+
+    const formData = new FormData(form);
+    const resp = await fetch(form.action, {
+      method: "POST",
+      body: new URLSearchParams(formData)
+    });
+
+    const data = await resp.json().catch(() => ({}));
+
+    if (resp.ok && data.ok) {
+      statusEl.textContent = "Done. Check your email.";
+      form.reset();
+    } else {
+      statusEl.textContent = "Error. Try again in 30 seconds.";
+    }
+  });
+</script>
+
 </section>
 
 <footer>
